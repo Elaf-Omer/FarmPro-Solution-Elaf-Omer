@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products -  FarmPro Solutions</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+   body {
+  background: url('13.jpg') center/cover no-repeat fixed;
+  background-size: cover;
+  color: rgb(23, 50, 18);
+}
+:root {
+  --primary-color: #2E7D32;
+  --secondary-color: #81C784;
+  --accent-color: #FDD835;
+}
+
+.product-card {
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-specs {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.product-price {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.category-filter {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-filter.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.search-bar {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--accent-color);
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card {
+  animation: fadeIn 0.6s ease-out;
+}
+.floating-contact-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2E7D32;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(27, 20, 15, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #2E7D32; /* لون عند التمرير */
+}
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img src="lo.jpg" alt="FarmPro Solutions Logo" width="50" height="50" class="me-2">
+             FarmPro Solutions
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html"><i class="fas fa-cogs"></i> Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product.html"><i class="fas fa-shopping-cart"></i> Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container my-5">
+      <!-- Search and Filter Section -->
+      <div class="row mb-4">
+          <div class="col-md-6">
+              <input type="text" class="form-control search-bar" placeholder="Search products...">
+          </div>
+          <div class="col-md-6">
+              <div class="d-flex flex-wrap justify-content-md-end">
+                  <span class="category-filter active" data-category="all">All</span>
+                  <span class="category-filter" data-category="tractors">Tractors</span>
+                  <span class="category-filter" data-category="harvesters">Harvesters</span>
+                  <span class="category-filter" data-category="cultivators">Cultivators</span>
+                  <span class="category-filter" data-category="irrigation-system">Irrigation System</span>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Products Grid -->
+      <div class="row g-4" id="products-grid">
+          <!-- Tractor Products -->
+          <div class="col-md-6 col-lg-4" data-category="tractors">
+              <a href="product-tractor.html" class="product-card card h-100 text-decoration-none">
+                  <div class="product-image-container">
+                      <div class="product-badge">New</div>
+                      <img class="product-image" src="11.jpg" alt="Tractor Image">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Pro Tractor X-Series</h5>
+                      <p class="product-specs">
+                          <i class="fas fa-cog me-2"></i>250 HP Engine<br>
+                          <i class="fas fa-gas-pump me-2"></i>Eco-Friendly Fuel System<br>
+                          <i class="fas fa-satellite me-2"></i>GPS Navigation
+                      </p>
+                      <p class="product-price">$75,000</p>
+                      <button class="btn btn-success w-100">Request Quote</button>
+                  </div>
+              </a>
+          </div>
+  
+          <!-- Harvesting Equipment -->
+          <div class="col-md-6 col-lg-4" data-category="harvesters">
+              <a href="product-harvester.html" class="product-card card h-100 text-decoration-none">
+                  <div class="product-image-container">
+                      <div class="product-badge">New</div>
+                      <img class="product-image" src="12.jpg" alt="Harvester Image">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Harvester Master Pro</h5>
+                      <p class="product-specs">
+                          <i class="fas fa-microchip me-2"></i>AI Crop Detection<br>
+                          <i class="fas fa-tachometer-alt me-2"></i>30ft Cutting Width<br>
+                          <i class="fas fa-battery-full me-2"></i>Extended Operation Time
+                      </p>
+                      <p class="product-price">$120,000</p>
+                      <button class="btn btn-success w-100">Request Quote</button>
+                  </div>
+              </a>
+          </div>
+  
+          <!-- Seeding Equipment -->
+          <div class="col-md-6 col-lg-4" data-category="cultivators">
+              <a href="product-cultivator.html" class="product-card card h-100 text-decoration-none">
+                  <div class="product-image-container">
+                      <div class="product-badge">Best Seller</div>
+                      <img class="product-image" src="10.jpg" alt="Cultivator Image">
+                  </div>
+                  <div class="card-body">
+                                          <h5 class="card-title">Smart Cultivator 2000</h5>
+                      <p class="product-specs">
+                          <i class="fas fa-ruler me-2"></i>Precision Spacing<br>
+                          <i class="fas fa-database me-2"></i>Boost Your Gardening Efficiency<br>
+                          <i class="fas fa-wifi me-2"></i>Wireless Control
+                      </p>
+                      <p class="product-price">$45,000</p>
+                      <button class="btn btn-success w-100">Request Quote</button>
+                  </div>
+              </a>
+          </div>
+  
+          <!-- Irrigation System -->
+          <div class="col-md-6 col-lg-4" data-category="irrigation-system">
+              <a href="product-irrigation.html" class="product-card card h-100 text-decoration-none">
+                  <div class="product-image-container">
+                      <div class="product-badge">New</div>
+                      <img class="product-image" src="9.jpg" alt="Irrigation System Image">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Advanced Irrigation System</h5>
+                      <p class="product-specs">
+                          <i class="fas fa-ruler me-2"></i>Precision Spacing<br>
+                          <i class="fas fa-database me-2"></i>Promote Healthy Growth<br>
+                          <i class="fas fa-satellite me-2"></i>GPS Navigation
+                      </p>
+                      <p class="product-price">$15,000</p>
+                      <button class="btn btn-success w-100">Request Quote</button>
+                  </div>
+              </a>
+          </div>
+          <!-- Add more product cards here -->
+      </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Category filtering
+      const filters = document.querySelectorAll('.category-filter');
+      const products = document.querySelectorAll('#products-grid > div');
+  
+      filters.forEach(filter => {
+          filter.addEventListener('click', function() {
+              // Update active state
+              filters.forEach(f => f.classList.remove('active'));
+              this.classList.add('active');
+  
+              // Filter products
+              const category = this.dataset.category;
+              products.forEach(product => {
+                  if (category === 'all' || product.dataset.category === category) {
+                      product.style.display = '';
+                      product.style.animation = 'fadeIn 0.6s ease-out';
+                  } else {
+                      product.style.display = 'none';
+                  }
+              });
+          });
+      });
+  
+      // Search functionality
+      const searchBar = document.querySelector('.search-bar');
+      searchBar.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+          
+          products.forEach(product => {
+              const productTitle = product.querySelector('.card-title').textContent.toLowerCase();
+              const productSpecs = product.querySelector('.product-specs').textContent.toLowerCase();
+              
+              if (productTitle.includes(searchTerm) || productSpecs.includes(searchTerm)) {
+                  product.style.display = '';
+                  product.style.animation = 'fadeIn 0.6s ease-out';
+              } else {
+                  product.style.display = 'none';
+              }
+          });
+      });
+  
+      // Quote Request Modal
+      const quoteButtons = document.querySelectorAll('.btn-success');
+      quoteButtons.forEach(button => {
+          button.addEventListener('click', function(event) {
+              event.stopPropagation(); // Prevent the card click event
+              const productName = this.closest('.card').querySelector('.card-title').textContent;
+              alert(`Thank you for your interest in ${productName}. A representative will contact you shortly.`);
+          });
+      });
+  });
+  </script>
+  
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+        <p>&copy; 2024 FarmPro Solutions. All Rights Reserved.</p>
+        <div class="d-flex justify-content-center mb-3">
+            <a href="index.html" class="text-white me-3">Home</a>
+            <a href="about.html" class="text-white me-3">About</a>
+            <a href="services.html" class="text-white me-3">Services</a>
+            <a href="product.html" class="text-white me-3">Products</a>
+            <a href="contact.html" class="text-white">Contact</a>
+        </div>
+        <p>Follow us on:</p>
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Sales - FarmPro Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+       body {
+  background: url('16.jpg') center/cover no-repeat fixed;
+  background-size: cover;
+  color: rgb(23, 50, 18);
+}
+    :root {
+      --primary-color: #2E7D32;
+      --secondary-color: #81C784;
+      --accent-color: #FDD835;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+    }
+    
+    .contact-info-card {
+      background: var(--primary-color);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      height: 100%;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      height: 300px;
+      margin-top: 2rem;
+    }
+    
+    .custom-btn {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 0.8rem 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .custom-btn:hover {
+      background-color: #1B5E20;
+      transform: translateY(-2px);
+    }
+    
+    .contact-method {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .contact-method:hover {
+      transform: translateY(-5px);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    .product-interest {
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .product-interest:hover {
+      border-color: var(--primary-color);
+      background-color: #f8f9fa;
+    }.floating-contact-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2E7D32;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(27, 20, 15, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #2E7D32; /* لون عند التمرير */
+}
+    
+    </style>
+    </head>
+    <body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img src="lo.jpg" alt="FarmPro Solutions Logo" width="50" height="50" class="me-2">
+             FarmPro Solutions
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html"><i class="fas fa-cogs"></i> Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="product.html"><i class="fas fa-shopping-cart"></i> Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-4">Contact Our Sales Team</h1>
+                <p class="lead">Interested in our agricultural equipment? We're here to help you find the perfect solution for your farming needs.</p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-8 mb-4">
+                <div class="contact-form animate-in">
+                    <form id="salesContactForm"
+                     action="https://formspree.io/f/mldedvrw"
+                      method="POST"
+                      >
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label class="form-label">Products of Interest</label>
+                            <div class="product-interest">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="tractors">
+                                    <label class="form-check-label" for="tractors">Tractors</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="harvesting">
+                                    <label class="form-check-label" for="harvesting">Harvesting Equipment</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="seeding">
+                                    <label class="form-check-label" for="seeding">Seeding Equipment</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="irrigation">
+                                    <label class="form-check-label" for="irrigation">Irrigation Systems</label>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+    
+                        <button type="submit" class="btn btn-success custom-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+                <div class="contact-info-card animate-in">
+                    <h3 class="mb-4">Get in Touch</h3>
+                    
+                    <div class="contact-method mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p class="mb-0">1-800-AGRI-PRO</p>
+                        <p>Monday - Friday: 8am - 6pm</p>
+                    </div>
+    
+                    <div class="contact-method mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email Us</h5>
+                        <p>sales@agriequippro.com</p>
+                    </div>
+    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Visit Us</h5>
+                        <p>123 Farming Avenue<br>Agricultural District<br>Croptown, AG 12345</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Map -->
+        <div class="col-sm-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120626.23744618325!2d30.543755278355068!3d19.126514457094892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x169dc9711def8ed5%3A0x3a29526fe2445108!2z2K_ZhtmC2YTYp9iMINin2YTYs9mI2K_Yp9mG!5e0!3m2!1sar!2s!4v1729377840453!5m2!1sar!2s" width="1300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('salesContactForm');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Gather form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+                interests: {
+                    tractors: document.getElementById('tractors').checked,
+                    harvesting: document.getElementById('harvesting').checked,
+                    seeding: document.getElementById('seeding').checked,
+                    irrigation: document.getElementById('irrigation').checked
+                }
+            };
+    
+            // Simulate form submission
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Thank you for your interest! Our sales team will contact you shortly.');
+            form.reset();
+        });
+    
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        });
+    
+        document.querySelectorAll('.animate-in').forEach(element => {
+            observer.observe(element);
+        });
+    });
+    
+    // Google Maps initialization
+    function initMap() {
+        const location = { lat: 40.7128, lng: -74.0060 }; // Example coordinates
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location,
+            styles: [
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#f5f5f2"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#a9de83"
+                        }
+                    ]
+                }
+            ]
+        });
+        
+        new google.maps.Marker({
+            position: location,
+            map: map,
+            title: 'FarmPro Solutions Headquarters'
+        });
+    }
+    </script>
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+        <p>&copy; 2024 FarmPro Solutions. All Rights Reserved.</p>
+        <div class="d-flex justify-content-center mb-3">
+            <a href="index.html" class="text-white me-3">Home</a>
+            <a href="about.html" class="text-white me-3">About</a>
+            <a href="services.html" class="text-white me-3">Services</a>
+            <a href="product.html" class="text-white me-3">Products</a>
+            <a href="contact.html" class="text-white">Contact</a>
+        </div>
+        <p>Follow us on:</p>
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+    
+    
+    </body>
+    </html>

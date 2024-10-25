@@ -1,0 +1,371 @@
+<h<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmPro Solutions - Leading Agricultural Equipment Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+      body {
+  background: url('15.jpg') center/cover no-repeat fixed;
+  background-size: cover;
+  color: rgb(23, 50, 18);
+}
+
+    :root {
+      --primary-color: #2E7D32;
+      --secondary-color: #81C784;
+      --accent-color: #FDD835;
+    }
+    
+    .navbar-custom {
+      background-color: var(--primary-color);
+    }
+    
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+      color: white !important;
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fagriculture-background&psig=AOvVaw0dUtAkp3a_bIqom-hR2Y_U&ust=1729876520239000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMCV4rDCp4kDFQAAAAAdAAAAABAE') center/cover no-repeat;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    
+    .product-card {
+      border: none;
+      border-radius: 15px;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .feature-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    
+    .cta-section {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 80px 0;
+    }
+    
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 0;
+    }
+    
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .animate-left {
+      animation: slideInFromLeft 1s ease-out;
+    }
+    
+    .animate-right {
+      animation: slideInFromRight 1s ease-out;
+    }
+    
+    .news-ticker {
+      background-color: var(--accent-color);
+      padding: 10px 0;
+      overflow: hidden;
+    }
+    
+    .ticker-content {
+      white-space: nowrap;
+      animation: ticker 20s linear infinite;
+    }
+    
+    @keyframes ticker {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    
+    </style>
+    </head>
+    <body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="lo.jpg" alt="FarmPro Solutions Logo" width="50" height="50" class="me-2">
+          FarmPro Solutions
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html"><i class="fas fa-cogs"></i> Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="product.html"><i class="fas fa-shopping-cart"></i> Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- News Ticker -->
+    <div class="news-ticker">
+      <div class="ticker-content">
+        🌟 Spring Sale: Up to 30% off on selected equipment | Free Delivery on orders over $5000 | New John Deere tractors in stock | Upcoming Farmer's Workshop: May 15th
+      </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <h1 class="display-3 mb-4">Powering Agriculture Forward</h1>
+        <p class="lead mb-4">Your trusted partner in agricultural equipment solutions since 1975</p>
+        <a href="product.html" class="btn btn-warning btn-lg me-3">View Equipment</a>
+        <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+      </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Featured Equipment</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card product-card">
+              <img src="4.jpg" alt="Modern red tractor with advanced technology features" class="card-img-top" width="400" height="300">
+              <div class="card-body">
+                <h5 class="card-title">2024 Pro Tractor X-Series</h5>
+                <p class="card-text">Advanced GPS guidance, eco-friendly engine, maximum efficiency.</p>
+                <a href="/product/tractor-x" class="btn btn-success">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card product-card">
+              <img src="2.jpg" alt="High-capacity grain harvester in golden wheat field" class="card-img-top" width="400" height="300">
+              <div class="card-body">
+                <h5 class="card-title">Y-Series Harvester</h5>
+                <p class="card-text">High-capacity grain handling with smart yield monitoring.</p>
+                <a href="/product/harvester-y" class="btn btn-success">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card product-card">
+              <img src="6.jpg" alt="Precision row crop planter with digital controls" class="card-img-top" width="400" height="300">
+              <div class="card-body">
+                <h5 class="card-title">Z-Series Smart Planter</h5>
+                <p class="card-text">Precision planting with real-time soil analysis.</p>
+                <a href="/product/planter-z" class="btn btn-success">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us</h2>
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h4>Expert Service</h4>
+            <p>24/7 technical support and maintenance</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h4>Competitive Pricing</h4>
+            <p>Best value for your investment</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h4>Fast Delivery</h4>
+            <p>Nationwide shipping and setup</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Warranty</h4>
+            <p>Extended coverage options</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">What Our Customers Say</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img src="18.jpg" alt="Portrait of John Smith, farmer in work clothes" class="testimonial-avatar" width="80" height="80">
+              <h5>nazar mohammed</h5>
+              <p class="text-muted">Wheat Farmer, Kansas</p>
+              <p>"The X-Series tractor has revolutionized our operations. Fuel efficiency is outstanding."</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img src="19.jpg" alt="Portrait of Maria Rodriguez, vineyard owner" class="testimonial-avatar" width="80" height="80">
+              <h5>sarah hashim</h5>
+              <p class="text-muted">Vineyard Owner, California</p>
+              <p>"Excellent service team. They're always there when we need them."</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img src="17.jpg" alt="Portrait of James Wilson, corn farmer" class="testimonial-avatar" width="80" height="80">
+              <h5>musab hassan</h5>
+              <p class="text-muted">Corn Farmer, Iowa</p>
+              <p>"The smart planter technology has improved our yield by 30%."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2 class="mb-4">Ready to Upgrade Your Equipment?</h2>
+        <p class="lead mb-4">Schedule a consultation with our experts today</p>
+        <a href="contact.html" class="btn btn-warning btn-lg">Get Started</a>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Farm Road<br>
+              <i class="fas fa-phone"></i> +1 234 567 8900<br>
+              <i class="fas fa-envelope"></i> info@farmpro.com
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="about.html" class="text-white">About Us</a></li>
+              <li><a href="services.html" class="text-white">Services</a></li>
+              <li><a href="product.html" class="text-white">Products</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Follow Us</h5>
+            <div class="social-links">
+              <a href="https://facebook.com/FarmPro" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+              <a href="https://twitter.com/FarmPro" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+              <a href="https://linkedin.com/company/FarmPro" class="text-white"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('product-card')) {
+            entry.target.classList.add('animate-left');
+          } else if (entry.target.classList.contains('testimonial-card')) {
+            entry.target.classList.add('animate-right');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.product-card, .testimonial-card').forEach(el => {
+      observer.observe(el);
+    });
+    </script>
+    
+    </body></html>
